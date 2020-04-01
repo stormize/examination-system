@@ -1,0 +1,730 @@
+@keyframes move-stars {
+  from {
+    transform: translateY(0rem); }
+  to {
+    transform: translateY(-50rem); } }
+
+@keyframes bounce {
+  0% {
+    transform: translate(0rem); }
+  20% {
+    transform: translate(0, -0.5rem); }
+  30% {
+    transform: translate(0, 0rem); }
+  50% {
+    transform: translate(0, -0.25rem); }
+  100% {
+    transform: translate(0, -0.1rem); } }
+
+@keyframes escape-left {
+  0% {
+    transform: translatex(0rem); }
+  25% {
+    transform: translatex(70rem);
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  75% {
+    opacity: 0;
+    transform: translatex(-70rem); } }
+
+@keyframes escape-right {
+  0% {
+    transform: translatex(0rem); }
+  25% {
+    transform: translatex(-70rem);
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  75% {
+    opacity: 0;
+    transform: translatex(70rem); } }
+
+@keyframes drop-down {
+  0% {
+    transform: translateY(-40rem); }
+  100% {
+    transform: translateY(0); } }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical; }
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none; }
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */ }
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0; }
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */ }
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */ }
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+img {
+  vertical-align: middle; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+.container {
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%); }
+  .container__star1 {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 18rem 13rem #fff,51rem 31rem #fff,5rem 18rem #fff,19rem 27rem #fff,48rem 58rem #fff,61rem 33rem #fff,22rem 50rem #fff,62rem 16rem #fff,33rem 38rem #fff,79rem 73rem #fff,34rem 31rem #fff,10rem 29rem #fff,45rem 43rem #fff,38rem 56rem #fff,76rem 37rem #fff,2rem 67rem #fff,6rem 53rem #fff,13rem 28rem #fff,24rem 73rem #fff,77rem 51rem #fff,20rem 17rem #fff,68rem 34rem #fff,78rem 37rem #fff,11rem 40rem #fff,2rem 15rem #fff,26rem 65rem #fff,23rem 13rem #fff,48rem 61rem #fff,34rem 62rem #fff,64rem 9rem #fff,16rem 26rem #fff,78rem 40rem #fff,42rem 69rem #fff,10rem 72rem #fff,18rem 66rem #fff,47rem 52rem #fff,43rem 40rem #fff,63rem 38rem #fff,25rem 19rem #fff,65rem 26rem #fff,69rem 12rem #fff,64rem 41rem #fff,74rem 52rem #fff,73rem 21rem #fff,70rem 41rem #fff,50rem 62rem #fff,40rem 45rem #fff,63rem 6rem #fff,52rem 5rem #fff,65rem 28rem #fff,18rem 10rem #fff,1rem 4rem #fff,48rem 8rem #fff,42rem 10rem #fff,15rem 62rem #fff,4rem 5rem #fff,29rem 55rem #fff,70rem 27rem #fff,61rem 25rem #fff,52rem 32rem #fff,19rem 26rem #fff,46rem 2rem #fff,15rem 9rem #fff,33rem 45rem #fff,7rem 63rem #fff,26rem 28rem #fff,45rem 28rem #fff,32rem 64rem #fff,39rem 71rem #fff,7rem 67rem #fff,47rem 36rem #fff,73rem 29rem #fff,3rem 34rem #fff,39rem 23rem #fff,54rem 76rem #fff,71rem 7rem #fff,4rem 73rem #fff,71rem 3rem #fff,60rem 22rem #fff,27rem 51rem #fff,75rem 44rem #fff,17rem 35rem #fff,78rem 66rem #fff,16rem 50rem #fff,2rem 38rem #fff,1rem 51rem #fff,79rem 10rem #fff,53rem 68rem #fff,80rem 78rem #fff,75rem 20rem #fff,54rem 4rem #fff,37rem 20rem #fff,70rem 58rem #fff,3rem 66rem #fff,21rem 41rem #fff,10rem 32rem #fff,8rem 13rem #fff,44rem 3rem #fff,78rem 49rem #fff,55rem 5rem #fff,68rem 37rem #fff,59rem 34rem #fff,20rem 73rem #fff,63rem 38rem #fff,37rem 45rem #fff,79rem 37rem #fff,70rem 8rem #fff,74rem 29rem #fff,58rem 28rem #fff,49rem 32rem #fff,33rem 35rem #fff,32rem 43rem #fff,19rem 46rem #fff,30rem 28rem #fff,25rem 33rem #fff,15rem 43rem #fff,52rem 24rem #fff,23rem 72rem #fff,50rem 7rem #fff,8rem 56rem #fff,26rem 60rem #fff,41rem 1rem #fff,51rem 77rem #fff,57rem 17rem #fff,58rem 22rem #fff,23rem 69rem #fff,43rem 8rem #fff,64rem 72rem #fff,30rem 20rem #fff,51rem 26rem #fff,15rem 54rem #fff,76rem 45rem #fff,23rem 37rem #fff,29rem 5rem #fff,73rem 54rem #fff,38rem 31rem #fff,14rem 5rem #fff,43rem 7rem #fff,50rem 16rem #fff,69rem 46rem #fff,31rem 64rem #fff,79rem 58rem #fff,31rem 40rem #fff,47rem 76rem #fff,70rem 43rem #fff,19rem 27rem #fff,6rem 29rem #fff,79rem 55rem #fff,12rem 57rem #fff,66rem 10rem #fff,7rem 32rem #fff,15rem 52rem #fff,79rem 9rem #fff,6rem 29rem #fff,47rem 22rem #fff,53rem 17rem #fff,76rem 11rem #fff,39rem 9rem #fff,9rem 62rem #fff,17rem 27rem #fff,42rem 65rem #fff,8rem 49rem #fff,70rem 13rem #fff,31rem 2rem #fff,42rem 74rem #fff,73rem 53rem #fff,46rem 57rem #fff,14rem 53rem #fff,30rem 65rem #fff,24rem 20rem #fff,32rem 21rem #fff,24rem 51rem #fff,7rem 15rem #fff,64rem 67rem #fff,63rem 11rem #fff,61rem 61rem #fff,30rem 18rem #fff,16rem 4rem #fff,35rem 74rem #fff,71rem 39rem #fff,63rem 50rem #fff,23rem 58rem #fff,37rem 72rem #fff,76rem 10rem #fff,21rem 47rem #fff,61rem 73rem #fff,64rem 44rem #fff,59rem 34rem #fff,44rem 25rem #fff,64rem 48rem #fff,1rem 14rem #fff,30rem 52rem #fff,8rem 30rem #fff,40rem 15rem #fff,29rem 39rem #fff,70rem 58rem #fff,29rem 17rem #fff,37rem 24rem #fff,10rem 65rem #fff,50rem 15rem #fff,16rem 45rem #fff,54rem 50rem #fff,66rem 21rem #fff,69rem 15rem #fff,52rem 18rem #fff,47rem 3rem #fff,20rem 10rem #fff,12rem 74rem #fff,25rem 76rem #fff,73rem 75rem #fff,16rem 30rem #fff,2rem 33rem #fff,37rem 2rem #fff,42rem 49rem #fff,45rem 65rem #fff,52rem 17rem #fff,1rem 10rem #fff,19rem 51rem #fff,60rem 40rem #fff,9rem 24rem #fff,46rem 8rem #fff,57rem 77rem #fff,34rem 47rem #fff,12rem 15rem #fff,34rem 46rem #fff,44rem 57rem #fff,48rem 7rem #fff,73rem 4rem #fff,2rem 48rem #fff,66rem 2rem #fff,59rem 18rem #fff,47rem 63rem #fff,32rem 54rem #fff,7rem 16rem #fff,32rem 63rem #fff,74rem 24rem #fff,44rem 75rem #fff,14rem 78rem #fff,34rem 11rem #fff,33rem 67rem #fff,18rem 34rem #fff,49rem 47rem #fff,16rem 5rem #fff,49rem 4rem #fff,50rem 78rem #fff,77rem 77rem #fff,42rem 31rem #fff,24rem 20rem #fff,18rem 7rem #fff,14rem 53rem #fff,15rem 59rem #fff,13rem 28rem #fff,71rem 66rem #fff,26rem 64rem #fff,25rem 76rem #fff,51rem 61rem #fff,77rem 52rem #fff,49rem 1rem #fff,57rem 68rem #fff,76rem 18rem #fff,35rem 69rem #fff,6rem 60rem #fff,34rem 46rem #fff,4rem 34rem #fff,7rem 70rem #fff,44rem 41rem #fff,64rem 12rem #fff,31rem 32rem #fff,16rem 19rem #fff,35rem 32rem #fff,34rem 67rem #fff,5rem 46rem #fff,30rem 58rem #fff,60rem 46rem #fff,70rem 47rem #fff,39rem 28rem #fff,59rem 61rem #fff,14rem 36rem #fff,70rem 77rem #fff,32rem 65rem #fff,19rem 23rem #fff,54rem 64rem #fff,18rem 7rem #fff,52rem 13rem #fff,43rem 24rem #fff,69rem 59rem #fff,70rem 60rem #fff,78rem 55rem #fff,42rem 23rem #fff,48rem 35rem #fff,45rem 66rem #fff,15rem 51rem #fff,63rem 46rem #fff,61rem 12rem #fff,5rem 70rem #fff,25rem 65rem #fff,17rem 75rem #fff,30rem 25rem #fff,22rem 55rem #fff,4rem 47rem #fff;
+    animation: move-stars 20s infinite linear; }
+  .container__star1:after {
+    position: absolute;
+    top: 20rem;
+    left: 0;
+    content: " ";
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: 11rem 10rem #fff,44rem 47rem #fff,31rem 1rem #fff,31rem 72rem #fff,15rem 38rem #fff,53rem 71rem #fff,9rem 27rem #fff,43rem 65rem #fff,69rem 37rem #fff,31rem 20rem #fff,16rem 66rem #fff,61rem 38rem #fff,12rem 49rem #fff,4rem 67rem #fff,41rem 76rem #fff,72rem 70rem #fff,22rem 76rem #fff,2rem 36rem #fff,55rem 68rem #fff,22rem 64rem #fff,75rem 45rem #fff,62rem 21rem #fff,42rem 51rem #fff,1rem 76rem #fff,62rem 48rem #fff,56rem 63rem #fff,20rem 58rem #fff,61rem 63rem #fff,22rem 19rem #fff,37rem 36rem #fff,9rem 24rem #fff,32rem 11rem #fff,15rem 4rem #fff,49rem 5rem #fff,17rem 11rem #fff,72rem 76rem #fff,64rem 51rem #fff,76rem 38rem #fff,59rem 35rem #fff,5rem 36rem #fff,51rem 43rem #fff,48rem 2rem #fff,22rem 70rem #fff,65rem 49rem #fff,33rem 62rem #fff,11rem 42rem #fff,56rem 27rem #fff,60rem 59rem #fff,20rem 30rem #fff,51rem 7rem #fff,48rem 5rem #fff,15rem 57rem #fff,74rem 23rem #fff,36rem 44rem #fff,20rem 16rem #fff,51rem 74rem #fff,76rem 18rem #fff,61rem 2rem #fff,29rem 41rem #fff,72rem 79rem #fff,8rem 66rem #fff,10rem 78rem #fff,53rem 46rem #fff,71rem 39rem #fff,60rem 58rem #fff,41rem 24rem #fff,59rem 46rem #fff,47rem 5rem #fff,49rem 23rem #fff,66rem 35rem #fff,54rem 14rem #fff,22rem 59rem #fff,31rem 18rem #fff,50rem 3rem #fff,8rem 20rem #fff,41rem 25rem #fff,32rem 27rem #fff,9rem 10rem #fff,71rem 24rem #fff,53rem 36rem #fff,78rem 74rem #fff,4rem 2rem #fff,5rem 40rem #fff,24rem 50rem #fff,38rem 76rem #fff,75rem 41rem #fff,69rem 17rem #fff,49rem 28rem #fff,21rem 41rem #fff,52rem 19rem #fff,23rem 69rem #fff,40rem 24rem #fff,34rem 22rem #fff,41rem 61rem #fff,2rem 65rem #fff,72rem 8rem #fff,56rem 36rem #fff,48rem 48rem #fff,6rem 29rem #fff,54rem 29rem #fff,32rem 64rem #fff,24rem 77rem #fff,47rem 43rem #fff,2rem 33rem #fff,40rem 70rem #fff,22rem 71rem #fff,25rem 14rem #fff,19rem 9rem #fff,3rem 11rem #fff,56rem 16rem #fff,20rem 14rem #fff,46rem 80rem #fff,22rem 51rem #fff,40rem 67rem #fff,77rem 31rem #fff,50rem 48rem #fff,71rem 10rem #fff,75rem 25rem #fff,54rem 22rem #fff,69rem 33rem #fff,78rem 46rem #fff,80rem 56rem #fff,28rem 52rem #fff,25rem 36rem #fff,25rem 30rem #fff,25rem 31rem #fff,14rem 46rem #fff,79rem 9rem #fff,76rem 34rem #fff,42rem 4rem #fff,60rem 70rem #fff,25rem 72rem #fff,77rem 44rem #fff,68rem 53rem #fff,7rem 64rem #fff,55rem 1rem #fff,36rem 28rem #fff,2rem 8rem #fff,33rem 24rem #fff,66rem 57rem #fff,70rem 4rem #fff,77rem 43rem #fff,37rem 13rem #fff,22rem 16rem #fff,31rem 47rem #fff,27rem 71rem #fff,24rem 57rem #fff,54rem 74rem #fff,38rem 25rem #fff,75rem 35rem #fff,11rem 55rem #fff,3rem 41rem #fff,3rem 23rem #fff,10rem 32rem #fff,28rem 44rem #fff,11rem 23rem #fff,77rem 76rem #fff,10rem 9rem #fff,37rem 6rem #fff,10rem 72rem #fff,31rem 38rem #fff,7rem 64rem #fff,9rem 51rem #fff,29rem 4rem #fff,47rem 28rem #fff,59rem 79rem #fff,37rem 33rem #fff,22rem 39rem #fff,15rem 7rem #fff,46rem 61rem #fff,73rem 14rem #fff,19rem 64rem #fff,25rem 68rem #fff,34rem 80rem #fff,36rem 49rem #fff,44rem 14rem #fff,35rem 41rem #fff,75rem 25rem #fff,2rem 7rem #fff,42rem 79rem #fff,3rem 20rem #fff,80rem 75rem #fff,72rem 37rem #fff,75rem 69rem #fff,44rem 1rem #fff,2rem 58rem #fff,17rem 50rem #fff,31rem 80rem #fff,25rem 59rem #fff,77rem 57rem #fff,2rem 76rem #fff,42rem 63rem #fff,34rem 27rem #fff,10rem 72rem #fff,25rem 22rem #fff,66rem 59rem #fff,63rem 34rem #fff,23rem 42rem #fff,35rem 73rem #fff,42rem 22rem #fff,48rem 41rem #fff,2rem 66rem #fff,56rem 78rem #fff,80rem 45rem #fff,59rem 24rem #fff,11rem 31rem #fff,5rem 27rem #fff,50rem 48rem #fff,74rem 44rem #fff,31rem 44rem #fff,64rem 50rem #fff,12rem 40rem #fff,42rem 8rem #fff,8rem 52rem #fff,12rem 52rem #fff,50rem 7rem #fff,39rem 76rem #fff,13rem 6rem #fff,42rem 3rem #fff,36rem 27rem #fff,20rem 61rem #fff,49rem 18rem #fff,57rem 44rem #fff,40rem 70rem #fff,3rem 47rem #fff,38rem 38rem #fff,76rem 65rem #fff,24rem 73rem #fff,46rem 19rem #fff,61rem 28rem #fff,64rem 11rem #fff,7rem 59rem #fff,6rem 32rem #fff,29rem 51rem #fff,38rem 64rem #fff,38rem 61rem #fff,52rem 75rem #fff,80rem 49rem #fff,41rem 25rem #fff,3rem 73rem #fff,27rem 14rem #fff,5rem 39rem #fff,44rem 68rem #fff,9rem 19rem #fff,35rem 39rem #fff,35rem 53rem #fff,30rem 30rem #fff,58rem 41rem #fff,10rem 26rem #fff,76rem 31rem #fff,55rem 44rem #fff,12rem 5rem #fff,66rem 42rem #fff,7rem 68rem #fff,6rem 50rem #fff,52rem 7rem #fff,8rem 12rem #fff,57rem 5rem #fff,42rem 4rem #fff,69rem 36rem #fff,54rem 58rem #fff,32rem 33rem #fff,17rem 14rem #fff,39rem 22rem #fff,80rem 21rem #fff,3rem 8rem #fff,28rem 4rem #fff,3rem 68rem #fff,14rem 36rem #fff,50rem 3rem #fff,6rem 63rem #fff,17rem 49rem #fff,69rem 68rem #fff,18rem 42rem #fff,69rem 27rem #fff,42rem 78rem #fff,54rem 4rem #fff,31rem 54rem #fff,79rem 5rem #fff,57rem 10rem #fff,73rem 35rem #fff,34rem 23rem #fff,67rem 75rem #fff,72rem 34rem #fff,25rem 27rem #fff,15rem 12rem #fff,19rem 15rem #fff,52rem 12rem #fff,12rem 77rem #fff,3rem 30rem #fff,7rem 15rem #fff,22rem 10rem #fff,8rem 43rem #fff,65rem 20rem #fff,36rem 74rem #fff,7rem 12rem #fff,21rem 57rem #fff,20rem 44rem #fff,19rem 15rem #fff,68rem 39rem #fff; }
+  .container__star2 {
+    right: 0;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 48rem 62rem #fff,46rem 40rem #fff,24rem 71rem #fff,3rem 4rem #fff,17rem 64rem #fff,44rem 24rem #fff,24rem 72rem #fff,78rem 40rem #fff,15rem 3rem #fff,75rem 1rem #fff,44rem 41rem #fff,48rem 40rem #fff,44rem 11rem #fff,1rem 18rem #fff,14rem 24rem #fff,33rem 63rem #fff,30rem 28rem #fff,66rem 2rem #fff,57rem 43rem #fff,4rem 24rem #fff,78rem 73rem #fff,73rem 38rem #fff,79rem 50rem #fff,35rem 78rem #fff,57rem 26rem #fff,67rem 66rem #fff,6rem 5rem #fff,21rem 36rem #fff,24rem 63rem #fff,16rem 39rem #fff,56rem 62rem #fff,14rem 44rem #fff,71rem 3rem #fff,47rem 13rem #fff,15rem 49rem #fff,39rem 19rem #fff,45rem 36rem #fff,11rem 52rem #fff,29rem 9rem #fff,41rem 77rem #fff,60rem 23rem #fff,45rem 53rem #fff,19rem 53rem #fff,38rem 64rem #fff,29rem 2rem #fff,63rem 76rem #fff,8rem 25rem #fff,7rem 49rem #fff,8rem 11rem #fff,79rem 48rem #fff,15rem 21rem #fff,33rem 80rem #fff,61rem 38rem #fff,69rem 42rem #fff,2rem 5rem #fff,32rem 12rem #fff,73rem 14rem #fff,36rem 34rem #fff,54rem 37rem #fff,14rem 20rem #fff,76rem 52rem #fff,75rem 42rem #fff,22rem 61rem #fff,68rem 13rem #fff,2rem 76rem #fff,33rem 22rem #fff,63rem 77rem #fff,34rem 36rem #fff,50rem 74rem #fff,4rem 59rem #fff,20rem 26rem #fff,34rem 12rem #fff,44rem 12rem #fff,35rem 76rem #fff,64rem 27rem #fff,24rem 11rem #fff,70rem 53rem #fff,71rem 23rem #fff,1rem 22rem #fff,19rem 62rem #fff,14rem 23rem #fff,37rem 24rem #fff,60rem 37rem #fff,19rem 3rem #fff,37rem 8rem #fff,29rem 77rem #fff,46rem 6rem #fff,47rem 68rem #fff,44rem 28rem #fff,61rem 62rem #fff,72rem 62rem #fff,56rem 2rem #fff,38rem 32rem #fff,20rem 24rem #fff,3rem 47rem #fff,19rem 64rem #fff,43rem 16rem #fff,71rem 11rem #fff,67rem 17rem #fff,10rem 27rem #fff;
+    animation: move-stars 20s infinite linear; }
+  .container__star2:after {
+    position: absolute;
+    top: 50rem;
+    content: " ";
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: 29rem 37rem #fff,54rem 5rem #fff,19rem 73rem #fff,3rem 52rem #fff,23rem 3rem #fff,7rem 79rem #fff,9rem 54rem #fff,13rem 74rem #fff,46rem 61rem #fff,1rem 47rem #fff,44rem 62rem #fff,23rem 31rem #fff,28rem 57rem #fff,9rem 68rem #fff,8rem 6rem #fff,12rem 65rem #fff,21rem 5rem #fff,7rem 20rem #fff,46rem 72rem #fff,7rem 74rem #fff,28rem 4rem #fff,71rem 32rem #fff,55rem 19rem #fff,66rem 80rem #fff,2rem 46rem #fff,60rem 36rem #fff,19rem 11rem #fff,40rem 20rem #fff,45rem 72rem #fff,73rem 9rem #fff,75rem 43rem #fff,77rem 10rem #fff,49rem 67rem #fff,29rem 18rem #fff,68rem 3rem #fff,35rem 12rem #fff,71rem 40rem #fff,59rem 23rem #fff,4rem 69rem #fff,25rem 55rem #fff,47rem 7rem #fff,75rem 13rem #fff,4rem 53rem #fff,39rem 11rem #fff,15rem 45rem #fff,19rem 33rem #fff,41rem 37rem #fff,60rem 18rem #fff,11rem 8rem #fff,1rem 16rem #fff,73rem 79rem #fff,41rem 32rem #fff,33rem 67rem #fff,35rem 44rem #fff,67rem 22rem #fff,34rem 14rem #fff,67rem 14rem #fff,20rem 39rem #fff,18rem 10rem #fff,55rem 1rem #fff,32rem 63rem #fff,11rem 69rem #fff,60rem 46rem #fff,67rem 26rem #fff,5rem 62rem #fff,15rem 24rem #fff,48rem 2rem #fff,28rem 51rem #fff,55rem 72rem #fff,17rem 59rem #fff,39rem 10rem #fff,55rem 56rem #fff,28rem 80rem #fff,54rem 49rem #fff,1rem 35rem #fff,35rem 34rem #fff,48rem 48rem #fff,19rem 68rem #fff,3rem 17rem #fff,63rem 47rem #fff,14rem 62rem #fff,63rem 9rem #fff,20rem 26rem #fff,19rem 55rem #fff,17rem 66rem #fff,72rem 12rem #fff,21rem 6rem #fff,19rem 43rem #fff,77rem 18rem #fff,57rem 62rem #fff,33rem 76rem #fff,45rem 57rem #fff,63rem 15rem #fff,18rem 16rem #fff,22rem 28rem #fff,15rem 45rem #fff,56rem 38rem #fff,49rem 77rem #fff,78rem 59rem #fff,49rem 50rem #fff; }
+  .container__star3 {
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 34rem 41rem #fff,29rem 19rem #fff,7rem 48rem #fff,63rem 79rem #fff,54rem 34rem #fff,11rem 66rem #fff,58rem 19rem #fff,10rem 46rem #fff,25rem 76rem #fff,26rem 10rem #fff,1rem 42rem #fff,74rem 20rem #fff,50rem 3rem #fff,30rem 23rem #fff,37rem 60rem #fff,54rem 43rem #fff,51rem 11rem #fff,3rem 31rem #fff,43rem 40rem #fff,42rem 8rem #fff,80rem 31rem #fff,52rem 42rem #fff,75rem 21rem #fff,53rem 50rem #fff,42rem 3rem #fff,44rem 58rem #fff,48rem 38rem #fff,40rem 18rem #fff,3rem 4rem #fff,44rem 29rem #fff,78rem 62rem #fff,33rem 35rem #fff,23rem 23rem #fff,74rem 36rem #fff,4rem 28rem #fff,58rem 2rem #fff,49rem 37rem #fff,32rem 77rem #fff,50rem 77rem #fff,69rem 44rem #fff,75rem 1rem #fff,56rem 13rem #fff,60rem 59rem #fff,30rem 47rem #fff,38rem 77rem #fff,3rem 28rem #fff,36rem 45rem #fff,24rem 76rem #fff,45rem 1rem #fff,1rem 11rem #fff;
+    animation: move-stars 30s infinite linear; }
+  .container__star3:after {
+    position: absolute;
+    top: 50rem;
+    content: " ";
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: 75rem 38rem #fff,76rem 33rem #fff,20rem 9rem #fff,75rem 17rem #fff,64rem 11rem #fff,43rem 54rem #fff,57rem 35rem #fff,31rem 12rem #fff,71rem 22rem #fff,13rem 15rem #fff,38rem 74rem #fff,16rem 52rem #fff,31rem 72rem #fff,7rem 52rem #fff,73rem 1rem #fff,15rem 14rem #fff,64rem 55rem #fff,11rem 35rem #fff,73rem 42rem #fff,15rem 60rem #fff,51rem 34rem #fff,28rem 32rem #fff,42rem 27rem #fff,42rem 65rem #fff,73rem 45rem #fff,79rem 76rem #fff,64rem 79rem #fff,21rem 69rem #fff,8rem 18rem #fff,74rem 42rem #fff,12rem 24rem #fff,57rem 61rem #fff,14rem 20rem #fff,54rem 23rem #fff,38rem 18rem #fff,51rem 10rem #fff,77rem 65rem #fff,77rem 52rem #fff,15rem 45rem #fff,7rem 9rem #fff,21rem 14rem #fff,15rem 26rem #fff,47rem 47rem #fff,14rem 36rem #fff,7rem 32rem #fff,75rem 58rem #fff,3rem 48rem #fff,64rem 47rem #fff,33rem 16rem #fff,65rem 6rem #fff; }
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 30rem;
+  width: 20rem;
+  margin: auto auto; }
+  .card--form * {
+    animation: drop-down 0.7s; }
+  .card--questions {
+    display: none;
+    height: 25rem;
+    width: 45rem;
+    flex-flow: column;
+    justify-content: space-around; }
+  .card__question {
+    height: 100%;
+    font-size: 1.5rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin: 0 auto; }
+  .card__body {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 75%;
+    color: #1b2735; }
+  .card--result {
+    display: none;
+    flex-flow: column;
+    height: 10rem;
+    box-shadow: -1px 15px 30px -12px black; }
+    .card--result__body {
+      height: 75%; }
+  .card__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+    height: 50%;
+    color: black; }
+  .card__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    height: 50%;
+    color: gray; }
+  .card__btn-list {
+    display: flex;
+    height: 50%;
+    background-color: #4FACFF; }
+  .card__info-btn {
+    display: flex;
+    flex-flow: column;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%; }
+    .card__info-btn:not(:last-child):not(:first-child) {
+      border-left: gray 1px solid;
+      border-right: gray 1px solid; }
+  .card__info-title {
+    font-size: 1.2rem; }
+  .card__info-text {
+    font-size: 1.2rem; }
+  .card__disable {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.input-group {
+  position: relative;
+  width: min-content;
+  height: min-content; }
+  .input-group__error {
+    color: red;
+    display: none;
+    margin-bottom: 1rem; }
+  .input-group__error--bounce {
+    transform: translateY(10px);
+    transition: 0.25s; }
+  .input-group__form-radio {
+    display: none; }
+  .input-group__form-radio-labelm, .input-group__form-radio-labelf {
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    height: 3rem;
+    width: 5rem;
+    background-size: 3rem 5rem;
+    background: linear-gradient(to bottom, #fff 0, #fff 3rem, #1b2735 3 rem, #1b2735 5rem);
+    position: absolute;
+    top: 0; }
+  .input-group__form-radio-labelm {
+    right: 0; }
+  .input-group input:checked + label {
+    transition: 1s;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    background-position: 0 -90px;
+    color: white; }
+  .input-group__form-radio-label::before {
+    content: " ";
+    position: absolute;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%; }
+  .input-group__form-input {
+    height: 2.5rem;
+    outline: none;
+    border: none;
+    border-bottom: gray 2px solid;
+    background-color: transparent; }
+    .input-group__form-input__label {
+      color: gray;
+      position: absolute;
+      left: 0rem;
+      bottom: 0.5rem;
+      font-size: larger;
+      pointer-events: none; }
+    .input-group__form-input:focus + label {
+      transition: ease-in-out 0.25s;
+      bottom: 2.5rem;
+      color: #1b2735; }
+    .input-group__form-input:not(:placeholder-shown) + label {
+      transition: ease-in-out 0.25s;
+      bottom: 2.5rem;
+      color: #1b2735; }
+    .input-group__form-input:focus {
+      border-bottom: #1b2735 2px solid;
+      transition: ease-in-out 0.25s; }
+
+.choice {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  color: #a9a9a9;
+  cursor: pointer; }
+  .choice__radio {
+    display: none; }
+    .choice__radio:checked + .choice__label:before {
+      box-shadow: 0 0 0 5px #1b2735 !important;
+      background-color: #1b2735;
+      border: 3px solid lavender; }
+    .choice__radio:checked + .choice__label {
+      color: #1b2735; }
+  .choice__label {
+    padding: 0 3rem;
+    font-size: 1.5rem; }
+    .choice__label:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1rem;
+      width: 1rem;
+      border-radius: 100%;
+      background-color: transparent;
+      border: 3px solid lavender;
+      box-shadow: 0 0 0 5px #a9a9a9; }
+  .choice:hover {
+    color: gray; }
+    .choice:hover .choice__label:before {
+      box-shadow: 0 0 0 5px gray; }
+
+.choices {
+  margin: 0 auto; }
+
+.form {
+  display: flex;
+  margin: auto;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  width: 90%; }
+
+.form-btn {
+  width: 100%;
+  height: 2rem;
+  color: white;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%); }
+
+.list-btn {
+  cursor: pointer;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 50px;
+  margin: 5px;
+  font-size: 1.3em;
+  color: #FFF;
+  border-style: none;
+  border-radius: 8px;
+  background-color: #1B2735; }
+  .list-btn > .fa-map-pin {
+    transform: rotate3d(1, 1, 100, 332deg) translateZ(100px) translate3d(0px, -9px, 27px);
+    color: yellow;
+    display: none; }
+  .list-btn--succeed {
+    box-shadow: 0px 0px 12px 0.4rem #5be819; }
+  .list-btn--danger {
+    box-shadow: 0px 0px 12px 0.4rem #f50c0c; }
+  .list-btn--current {
+    animation: bounce 0.7s infinite; }
+
+.skip-btn {
+  position: relative;
+  padding: 1rem;
+  background-color: transparent;
+  margin: auto auto;
+  border: 1px solid gray; }
+  .skip-btn:after {
+    bottom: 0;
+    right: 0;
+    border: 1px solid transparent;
+    content: "";
+    position: absolute; }
+  .skip-btn:before {
+    top: 0;
+    left: 0;
+    content: "";
+    border: 1px solid transparent;
+    position: absolute; }
+  .skip-btn:hover:before, .skip-btn:hover:after {
+    width: 100%;
+    height: 100%; }
+  .skip-btn:hover:before {
+    border-top-color: greenyellow;
+    border-left-color: hotpink;
+    transition: width 0.25s , height 0.25s  0.25s; }
+  .skip-btn:hover:after {
+    border-bottom-color: blue;
+    border-right-color: red;
+    transition: border-color 0s ease-out 0.5s, width 0.25s ,height 0.25s; }
+
+.question-btn-list {
+  display: flex;
+  justify-content: space-between; }
+
+.mark-btn {
+  color: #1b2735;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  line-height: 45px;
+  margin: 0 0 2em;
+  max-width: 160px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+  letter-spacing: 0; }
+  .mark-btn:hover, .mark-btn:active {
+    letter-spacing: 0.2rem; }
+  .mark-btn:before, .mark-btn:after {
+    backface-visibility: hidden;
+    border: 1px solid rgba(27, 39, 53, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0; }
+  .mark-btn:hover:before, .mark-btn:hover:after {
+    backface-visibility: hidden;
+    border-color: #1b2735;
+    transition: width 350ms ease-in-out;
+    width: 100%; }
+  .mark-btn:before:hover {
+    bottom: auto;
+    top: 0;
+    width: 100%; }
+
+.nav {
+  background-color: lavender;
+  margin: 0 auto;
+  top: 0;
+  left: auto;
+  height: 3rem;
+  width: 70%;
+  justify-content: space-around;
+  align-items: center;
+  display: none;
+  overflow: hidden; }
+
+.side-nav {
+  background-color: #FFF;
+  margin: 0 auto;
+  top: 5rem;
+  left: auto;
+  height: 70vh;
+  width: 3rem;
+  justify-content: space-around;
+  flex-flow: column;
+  align-items: center;
+  display: none;
+  position: absolute; }

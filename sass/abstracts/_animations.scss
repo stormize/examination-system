@@ -1,0 +1,43 @@
+@keyframes move-stars{
+    
+        from{transform: translateY(0rem);}
+        to{transform: translateY(-50rem);}
+      
+}
+@keyframes bounce{
+        0%{transform: translate(0rem);
+                     
+        }
+        20%{transform: translate(0,-0.5rem);
+                
+        }
+        30%{ 
+        transform: translate(0,0rem);
+                }
+        50%{transform: translate(0,-0.25rem);
+                 
+        }
+        100%{
+                transform: translate(0,-0.1rem);
+                  
+        }
+}
+@keyframes escape-left{
+        0%{transform: translatex(0rem); }
+        25%{transform: translatex(70rem); opacity: 0;}
+        50%{opacity: 0;}
+        75%{ opacity: 0; transform: translatex(-70rem);}
+        
+}
+@keyframes escape-right{
+        0%{transform: translatex(0rem); }
+        25%{transform: translatex(-70rem); opacity: 0;}
+        50%{opacity: 0;}
+        75%{ opacity: 0; transform: translatex(70rem);}
+}
+
+
+@keyframes drop-down{
+     0%{transform: translateY(-40rem);}
+     100%{transform: translateY(0);}   
+}

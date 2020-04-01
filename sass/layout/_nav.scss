@@ -1,0 +1,26 @@
+.nav{
+    background-color: lavender;
+    margin: 0 auto;
+    top: 0;
+    left: auto;
+    height: 3rem;
+    width: 70%;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+    overflow: hidden; 
+}
+
+.side-nav{
+    background-color: #FFF;
+    margin: 0 auto;
+    top: 5rem;
+    left: auto;
+    height: 70vh;
+    width: 3rem;
+    justify-content: space-around;
+    flex-flow: column;
+    align-items: center;
+    display: none;
+    position: absolute;
+}

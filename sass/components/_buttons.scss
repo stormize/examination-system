@@ -1,0 +1,126 @@
+.form-btn{
+    width: 100%;
+    height: 2rem;
+    color: white;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+
+}
+.list-btn{
+    cursor: pointer; 
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 50px;
+    margin: 5px;
+    font-size: 1.3em;  
+    color: #FFF;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #1B2735;  
+    
+    & > .fa-map-pin{
+        transform: rotate3d(1, 1, 100, 332deg) translateZ(100px) translate3d(0px, -9px, 27px);
+    color: yellow;
+    display: none;
+    }
+    &--succeed{
+       box-shadow: 0px 0px 12px 0.4rem #5be819 
+    }
+    &--danger{
+        box-shadow: 0px 0px 12px 0.4rem rgb(245, 12, 12); 
+    }
+    &--current{
+        animation: bounce 0.7s infinite;
+    }
+  }
+.skip-btn{
+    position: relative;
+padding:1rem;
+background-color: transparent;
+margin: auto auto;
+border: 1px solid gray;
+&:after{
+bottom: 0;
+right: 0;
+border: 1px solid transparent;
+content: "";
+position: absolute;
+}
+&:before{
+   top: 0;
+   left: 0;
+   content: "";
+   border: 1px solid transparent;
+   position: absolute;
+}
+&:hover:before,
+&:hover:after{
+    width: 100%; 
+    height: 100%;
+    
+}
+&:hover:before{
+   
+border-top-color: greenyellow;
+border-left-color: hotpink;
+transition:  width 0.25s , height 0.25s  0.25s; 
+
+}
+&:hover:after{
+   
+border-bottom-color:blue;
+border-right-color: red;
+transition:  border-color 0s ease-out 0.5s, width 0.25s ,height 0.25s ;
+}
+}
+.question-btn-list{
+    display: flex;
+    justify-content: space-between;
+}
+.mark-btn{
+    color:#1b2735 ;
+    cursor: pointer;
+    // display: block;
+    background-color: transparent;
+    font-size:16px;
+    font-weight: 400;
+    border: none;
+    line-height: 45px;
+    margin: 0 0 2em;
+    max-width: 160px; 
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    letter-spacing: 0;
+    &:hover , &:active{
+        letter-spacing: 0.2rem;
+    }
+    &:before,&:after{
+        backface-visibility: hidden;
+  border: 1px solid rgba(#1b2735, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+    }
+    &:hover{
+        &:before,&:after{
+        backface-visibility: hidden;
+        border-color: #1b2735;
+        transition: width 350ms ease-in-out;
+        width: 100%;
+        }
+    }
+    &:before:hover{
+        bottom: auto;
+        top: 0;
+        width: 100%;
+    }
+    
+}

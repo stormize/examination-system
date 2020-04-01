@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+        <div class="container">
+        <div class="container__star1"></div>
+        <div class="container__star2"></div>
+        <div class="container__star3"></div>
+        <div class="nav" id="nav">
+            
+            <div class="list-btn" id="0">
+                    <i class="fas fa-map-pin"></i>
+                1
+            </div>
+            <div class="list-btn" id="1">
+                    <i class="fas fa-map-pin"></i>
+                2
+            </div>
+            <div class="list-btn" id="2">
+                    <i class="fas fa-map-pin"></i>
+                3
+            </div>
+            <div class="list-btn" id="3">
+                    <i class="fas fa-map-pin"></i>
+                4
+            </div>
+            <div class="list-btn" id="4">
+                    <i class="fas fa-map-pin"></i>
+                5
+            </div>
+        
+        </div>
+        <div class="card card--questions" id="question-card">
+            
+            <div class="card__body">
+                    <div id="prev"><i class="fas fa-chevron-left fa-5x"></i></div>
+        <div class="card__question">
+                    <p id="question-text"></p>
+        <div class="choices" id="choices">
+            
+        </div></div>
+        <div id="next"><i class="fas fa-chevron-right fa-5x"></i></div></div>
+        <div class  = "question-btn-list"><button value="mark" id="skip" class="mark-btn">mark
+        </button>
+        <button id="submit-all" class="mark-btn">submit all
+        </button></div>
+        </div>
+        <div class="card card--result" id="result"> 
+            <div class="card--result__body">
+                <div class="card__title" id="name-result">amr</div>
+                <div class="card__text" id="email-result">amr.makram2@gmail.com</div>
+            </div>
+            <div class="card__btn-list" id="result">
+                <div class="card__info-btn">
+                    <div class="card__info-title">Grade</div>
+                    <div class="card__info-text" id="grade-result">2323</div>
+                </div>
+                <div class="card__info-btn">
+                    <div class="info_title">Gender</div>
+                    <div class="info_text" id="gender-result">adsada</div>
+                </div>
+                <div class="card__info-btn">
+                    <div class="info_title">Age</div>
+                    <div class="info_text" id="age-result">asdad</div>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="form-card">
+        <form class="form" id="form">
+                <div class="input-group" style="position: relative;">
+                    <span class="input-group__error" id="name-error">name must be 8 letter bla bla bla</span>
+                    <input id="name" class="input-group__form-input" placeholder="&nbsp" type="text" required>
+                        <label class="input-group__form-input__label">name*</label>
+                         </div>
+                         <div class="input-group" style="position: relative;">
+                            <span class="input-group__error" id="age-error">must be between 17-120</span>
+                            <input id="age" class="input-group__form-input" placeholder="&nbsp" type="number" required>
+                            <label class="input-group__form-input__label">age*</label>
+                             </div>
+                             <div class="input-group" style="position: relative;">
+                                <span class="input-group__error" id="email-error">must be a valid email</span>
+                                <input id="email" class="input-group__form-input" placeholder="&nbsp" type="email" required>
+                                <label class="input-group__form-input__label">email*</label>
+                                 </div>
+                                 <div class="input-group" style="position: relative;">
+                                        <input id="male" class="input-group__form-radio" placeholder="&nbsp" name="gender" value="male" type="radio" checked>
+                                        <label class="input-group__form-radio-labelm" for="male">male</label>
+
+                                        <input id="female" class="input-group__form-radio" placeholder="&nbsp" name="gender" value="female" type="radio">
+                                        <label class="input-group__form-radio-labelf" for="female">female</label>
+
+                                       
+                                         </div>
+                                         <button class="form-btn" id="submit" >Submit</button>
+        </form>
+        </div></div>
+</body>
+<script src="app.js"></script>
+<script src="https://kit.fontawesome.com/a2c240c32b.js" crossorigin="anonymous"></script>
+</html>

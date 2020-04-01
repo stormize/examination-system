@@ -1,0 +1,7 @@
+@function multiply-shadow($n){
+    $value : '#{random(80)}rem #{random(80)}rem #fff';
+    @for $i from 2 through $n{
+        $value : '#{$value},#{random(80)}rem #{random(80)}rem #fff'
+    }
+    @return unquote($value);
+}
